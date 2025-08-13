@@ -1,0 +1,33 @@
+# Logs
+*.log
+logs/
+
+# Données temporaires
+*.tmp
+*.temp
+
+# Sauvegardes
+*.backup
+*.tar.gz
+*.zip
+
+# Environnement
+.env
+.env.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+.docker/
+
+# Données personnelles (si stockées localement)
+data/
+backup/

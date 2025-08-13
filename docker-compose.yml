@@ -1,0 +1,23 @@
+version: '3.8'
+
+services:
+  openrefine:
+    image: felixlohmeier/openrefine:latest
+    container_name: openrefine
+    ports:
+      - "8888:3333"
+    volumes:
+      - openrefine_data:/data
+    restart: unless-stopped
+    environment:
+      - JAVA_OPTS=-Xms1400M -Xmx2048M
+    healthcheck:
+      test: ["CMD", "wget", "--quiet", "--tries=1", "--spider", "http://localhost:3333"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+volumes:
+  openrefine_data:
+    driver: local
